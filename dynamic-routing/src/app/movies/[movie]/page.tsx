@@ -192,12 +192,11 @@ function Movie({params}: {params: {movie: string}}) {
         }
     ]
 
-    const findMovie = movies.find(mov => mov.id === movie);
-    console.log("specific movie = ",findMovie);
+    const findMovie = movies.find(mov => mov.id === movie)
   return (
     <div className='flex justify-center items-center h-screen w-full'>
         <div className='w-1/2 h-[600px] flex flex-col justify-center items-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] rounded-xl'>
-            <img src={findMovie.profile_path} alt={findMovie.name} alt="error" />
+            <img src={findMovie?.profile_path} alt={findMovie?.name} alt="error" />
             <h1 className='text-center text-4xl font-bold'>{findMovie.name}</h1>
             <h2 className='text-center text-4xl font-bold'>{findMovie.character}</h2>
         </div>
